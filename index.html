@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeatherWeb</title>
+    <link rel="stylesheet" href="styles/css.css">
+</head>
+
+<body>
+<header class="heading">
+    <h1 class="m10">Погода здесь</h1>
+    <button class="update">
+        Обновить геолокацию
+    </button>
+    <button class="updateMobile">
+        <img src="img/cycle.png" id="updateSize" alt="update">
+    </button>
+</header>
+
+<main class="grid-container">
+    <div class="city">
+        <h2 class="cityText">Saint Petersburg</h2>
+        <div class="data">
+            <img id="weather" src="img/weather.png" alt="weatherIcon">
+            <div id="temperature">8°C</div>
+        </div>
+    </div>
+    <div class="cityDesc">
+        <ul>
+            <li class="wind">
+                <div class=infoName>Ветер</div>
+                <div class="info">Moderate breeze, 6.0 m/s, North-northwest</div>
+            </li>
+            <li class="cloudy">
+                <div class=infoName>Облачность</div>
+                <div class="info">Broken clouds</div>
+            </li>
+            <li class="pressure">
+                <div class=infoName>Давление</div>
+                <div class="info">1013 hpa</div>
+            </li>
+            <li class="humidity">
+                <div class=infoName>Влажность</div>
+                <div class="info">52%</div>
+            </li>
+            <li class="coordinates">
+                <div class=infoName>Координаты</div>
+                <div class="info">[59.88, 30.42]</div>
+            </li>
+        </ul>
+    </div>
+    <div class="favorites">
+        <h2>Избранное</h2>
+    </div>
+    <div id="newCity">
+        <label>
+            <input class="newCityInput" type="text" placeholder="Добавить новый город">
+        </label>
+        <button class="buttonStyleBezButstrapa">
+            <img src="img/buttonDonate.png" alt="button" style="height: 70px; width: 80px">
+        </button>
+    </div>
+    <ul class="moreCities">
+        <li class="cityBlock">
+            <div class="cityName">
+                <h3 class="name">Moscow</h3>
+                <div class="temperature">5°C</div>
+                <img class="icon-weather" src="img/animeWeather.jpeg" alt="weatherIcon">
+                <button class="delete">
+                    <img src="img/animeKrest-removebg-preview.png" alt="krest" style="width: 50px;height: 50px">
+                </button>
+            </div>
+            <div class="cityDesc">
+                <ul>
+                    <li class="wind">
+                        <div class=infoName>Ветер</div>
+                        <div class="info">Moderate breeze, 6.0 m/s, North-northwest</div>
+                    </li>
+                    <li class="cloudy">
+                        <div class=infoName>Облачность</div>
+                        <div class="info">Broken clouds</div>
+                    </li>
+                    <li class="pressure">
+                        <div class=infoName>Давление</div>
+                        <div class="info">1013 hpa</div>
+                    </li>
+                    <li class="humidity">
+                        <div class=infoName>Влажность</div>
+                        <div class="info">52%</div>
+                    </li>
+                    <li class="coordinates">
+                        <div class=infoName>Координаты</div>
+                        <div class="info">[59.88, 30.42]</div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="cityBlock">
+            <div class="cityName">
+                <h3 class="name">Helsinki</h3>
+                <div class="temperature">3°C</div>
+                <img class="icon-weather" src="img/animeWeather.jpeg" alt="weatherIcon">
+                <button class="delete">
+                    <img src="img/animeKrest-removebg-preview.png" alt="krest" style="width: 50px;height: 50px">
+                </button>
+            </div>
+            <div class="cityDesc">
+                <ul>
+                    <li class="wind">
+                        <div class=infoName>Ветер</div>
+                        <div class="info">Moderate breeze, 6.0 m/s, North-northwest</div>
+                    </li>
+                    <li class="cloudy">
+                        <div class=infoName>Облачность</div>
+                        <div class="info">Broken clouds</div>
+                    </li>
+                    <li class="pressure">
+                        <div class=infoName>Давление</div>
+                        <div class="info">1013 hpa</div>
+                    </li>
+                    <li class="humidity">
+                        <div class=infoName>Влажность</div>
+                        <div class="info">52%</div>
+                    </li>
+                    <li class="coordinates">
+                        <div class=infoName>Координаты</div>
+                        <div class="info">[59.88, 30.42]</div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="cityBlock">
+            <div class="cityName">
+                <h3 class="name">Moscow</h3>
+                <div class="temperature">5°C</div>
+                <img class="icon-weather" src="img/animeWeather.jpeg" alt="weatherIcon">
+                <button class="delete">
+                    <img src="img/animeKrest-removebg-preview.png" alt="krest" style="width: 50px;height: 50px">
+                </button>
+            </div>
+            <div class="cityDesc">
+                <ul>
+                    <li class="wind">
+                        <div class=infoName>Ветер</div>
+                        <div class="info">Moderate breeze, 6.0 m/s, North-northwest</div>
+                    </li>
+                    <li class="cloudy">
+                        <div class=infoName>Облачность</div>
+                        <div class="info">Broken clouds</div>
+                    </li>
+                    <li class="pressure">
+                        <div class=infoName>Давление</div>
+                        <div class="info">1013 hpa</div>
+                    </li>
+                    <li class="humidity">
+                        <div class=infoName>Влажность</div>
+                        <div class="info">52%</div>
+                    </li>
+                    <li class="coordinates">
+                        <div class=infoName>Координаты</div>
+                        <div class="info">[59.88, 30.42]</div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="cityBlock">
+            <div class="cityName">
+                <h3 class="name">Helsinki</h3>
+                <div class="temperature">3°C</div>
+                <img class="icon-weather" src="img/animeWeather.jpeg" alt="weatherIcon">
+                <button class="delete">
+                    <img src="img/animeKrest-removebg-preview.png" alt="krest" style="width: 50px;height: 50px">
+                </button>
+            </div>
+            <div class="cityDesc">
+                <ul>
+                    <li class="wind">
+                        <div class=infoName>Ветер</div>
+                        <div class="info">Moderate breeze, 6.0 m/s, North-northwest</div>
+                    </li>
+                    <li class="cloudy">
+                        <div class=infoName>Облачность</div>
+                        <div class="info">Broken clouds</div>
+                    </li>
+                    <li class="pressure">
+                        <div class=infoName>Давление</div>
+                        <div class="info">1013 hpa</div>
+                    </li>
+                    <li class="humidity">
+                        <div class=infoName>Влажность</div>
+                        <div class="info">52%</div>
+                    </li>
+                    <li class="coordinates">
+                        <div class=infoName>Координаты</div>
+                        <div class="info">[59.88, 30.42]</div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="cityBlock">
+            <div class="cityName">
+                <h3 class="name">Moscow</h3>
+                <div class="temperature">5°C</div>
+                <img class="icon-weather" src="img/animeWeather.jpeg" alt="weatherIcon">
+                <button class="delete">
+                    <img src="img/animeKrest-removebg-preview.png" alt="krest" style="width: 50px;height: 50px">
+                </button>
+            </div>
+            <div class="cityDesc">
+                <ul>
+                    <li class="wind">
+                        <div class=infoName>Ветер</div>
+                        <div class=info>Moderate breeze, 6.0 m/s, North-northwest</div>
+                    </li>
+                    <li class="cloudy">
+                        <div class=infoName>Облачность</div>
+                        <div class="info">Broken clouds</div>
+                    </li>
+                    <li class="pressure">
+                        <div class=infoName>Давление</div>
+                        <div class="info">1013 hpa</div>
+                    </li>
+                    <li class="humidity">
+                        <div class=infoName>Влажность</div>
+                        <div class="info">52%</div>
+                    </li>
+                    <li class="coordinates">
+                        <div class=infoName>Координаты</div>
+                        <div class="info">[59.88, 30.42]</div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="cityBlock">
+            <div class="cityName">
+                <h3 class="name">Helsinki</h3>
+                <div class="temperature">3°C</div>
+                <img class="icon-weather" src="img/animeWeather.jpeg" alt="weatherIcon">
+                <button class="delete">
+                    <img src="img/animeKrest-removebg-preview.png" alt="krest" style="width: 50px;height: 50px">
+                </button>
+            </div>
+            <div class="cityDesc">
+                <ul>
+                    <li class="wind">
+                        <div class=infoName>Ветер</div>
+                        <div class="info">Moderate breeze, 6.0 m/s, North-northwest</div>
+                    </li>
+                    <li class="cloudy">
+                        <div class=infoName>Облачность</div>
+                        <div class="info">Broken clouds</div>
+                    </li>
+                    <li class="pressure">
+                        <div class=infoName>Давление</div>
+                        <div class="info">1013 hpa</div>
+                    </li>
+                    <li class="humidity">
+                        <div class=infoName>Влажность</div>
+                        <div class="info">52%</div>
+                    </li>
+                    <li class="coordinates">
+                        <div class=infoName>Координаты</div>
+                        <div class="info">[59.88, 30.42]</div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</main>
+
+</body>
+</html>
