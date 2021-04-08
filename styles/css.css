@@ -14,12 +14,12 @@
     border-radius: 12px;
 }
 
-#updateSize{
+#updateSize {
     height: 25px;
     width: 25px;
 }
 
-.m10{
+.m10 {
     margin: 10px;
 }
 
@@ -70,7 +70,8 @@
     margin-top: auto;
 }
 
-.grid-container {
+
+.huy {
     max-width: 1080px;
     margin: auto;
     display: grid;
@@ -85,12 +86,13 @@
 }
 
 .moreCities {
+    max-width: 1080px;
+    margin: auto;
     display: grid;
     text-align: left;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 400px 1fr;
     padding: 0;
-    margin: 0;
     list-style-type: none;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -99,6 +101,8 @@
             "cityBlock cityBlock"
             "cityBlock cityBlock";
 }
+
+
 
 .cityBlock {
     position: relative;
@@ -128,7 +132,7 @@
     font-size: 20px;
     vertical-align: top;
     height: 60px;
-    width: 300px;
+    width: 240px;
 }
 
 .data {
@@ -149,7 +153,7 @@
     margin: 10px;
 }
 
-#temperature{
+#temperature {
     color: #848484;
     font-size: 100px;
 }
@@ -175,18 +179,36 @@ ul {
     margin-bottom: 0;
 }
 
-.heading{
+.heading {
     max-width: 1080px;
     display: flex;
     font-size: 30px;
     color: #848484;
     padding: 0;
-    margin:auto;
+    margin: auto;
     text-align: left;
 }
 
 @media all and (max-width: 900px) {
-
+    .name {
+        font-size: 28px;
+    }
+    .temperature {
+        font-size: 28px;
+    }
+    .heading{
+        font-size: 20px;
+    }
+    .cityText{
+        font-size: 30px;
+    }
+    #temperature{
+        font-size: 40px;
+    }
+    #newCity {
+        text-align:left ;
+        margin: auto 10px;
+    }
     .updateMobile {
         display: inline;
         height: 80px;
@@ -196,8 +218,32 @@ ul {
         margin: auto 15px;
         float: right;
     }
+
     .update {
         display: none;
+    }
+    .moreCities {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+                "cityBlock"
+                "cityBlock"
+                "cityBlock"
+                "cityBlock"
+                "cityBlock"
+                "cityBlock";
+    }
+    .newCityInput{
+        width: 85%;
+    }
+    .huy{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                "city"
+                "cityDesc"
+                "favorites"
+                "newCity"
+                "moreCities"
+                "moreCities";
     }
     .container {
         display: grid;
@@ -226,11 +272,21 @@ ul {
         background: white;
         border: 0;
         height: 60px;
-        width: 60px;
+        width: 12%;
     }
 
-    .moreCities {
-        display: contents;
-    }
+
 }
 
+@media all and (max-width: 500px) {
+    .newCityInput{
+        width: 70%;
+    }
+    .buttonStyleBezButstrapa {
+        flex: none;
+        background: white;
+        border: 0;
+        height: 60px;
+        width: 10%;
+    }
+}
