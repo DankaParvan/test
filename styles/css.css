@@ -71,7 +71,7 @@
 }
 
 
-.huy {
+.grid {
     max-width: 1080px;
     margin: auto;
     display: grid;
@@ -109,15 +109,15 @@
     vertical-align: bottom;
 }
 
-.delete {
+.krest {
     background: white;
     border: 0;
     height: 60px;
     width: 60px;
 }
 
-.icon-weather {
-    height: 50px;
+.animeWeather {
+    height: 60px;
     width: 70px;
 }
 
@@ -172,9 +172,9 @@ ul {
 
 
 .name,
-.icon-weather,
+.animeWeather,
 .temperature,
-.delete {
+.krest {
     margin-top: auto;
     margin-bottom: 0;
 }
@@ -235,7 +235,7 @@ ul {
     .newCityInput{
         width: 85%;
     }
-    .huy{
+    .grid{
         grid-template-columns: 1fr;
         grid-template-areas:
                 "city"
@@ -289,4 +289,12 @@ ul {
         height: 60px;
         width: 10%;
     }
+}
+#buttonDonate{
+    height: 70px;
+    width: 80px
+}
+.krestStyles{
+    width: 50px;
+    height: 50px
 }
