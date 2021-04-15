@@ -121,8 +121,9 @@
 
 .animeWeather {
     height: 60px;
-    width: 70px;
+    width: 60px;
     margin-right: 20px;
+    border-radius: 50%;
 }
 
 

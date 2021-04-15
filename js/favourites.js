@@ -1,18 +1,36 @@
-let addButton=document.getElementById("buttonDonate");
-let formAdd=document.getElementById("newCity");
-let counter=0;
+let addButton = document.getElementById("buttonDonate");
+let formAdd = document.getElementById("newCity");
+let counter = 0;
 let newCityData;
 
 localStorageInit();
 forEachFavourite((newCityName) => {
-    getFastWeather(newCityName, (res) => {newCityData=JSON.stringify(res);
-        let FavouritesCity=document.createElement("li")
-        FavouritesCity.setAttribute("name",res.name);
-        FavouritesCity.classList.add("cityBlock" ,"mb25");
-        FavouritesCity.innerHTML='<div class="cityName">\n' +
-            '                <h3 class="name">'+ res.name +'</h3>\n' +
-            '                <div class="temperature"><span>'+ Math.trunc(res.main.temp) +'°C</span></div>\n' +
-            '                <img class="animeWeather" src="img/animeWeather.jpeg" alt="weatherIcon">\n' +
+    getFastWeather(newCityName, (res) => {
+        newCityData = JSON.stringify(res);
+        let FavouritesCity = document.createElement("li")
+        FavouritesCity.setAttribute("name", res.name);
+        FavouritesCity.classList.add("cityBlock", "mb25");
+        let weatherImg;
+
+        var isRainy = false;
+
+        for (var x in res.weather) {
+            if ((x.main === "Rain") || (x.main === "Snow")) {
+                isRainy = true;
+                break;
+            }
+        }
+
+
+        if (isRainy) {
+            weatherImg = "../img/sk2NgSo19ek.jpg";
+        } else {
+            weatherImg = "../img/M2tjhQmJe0o.jpg";
+        }
+        FavouritesCity.innerHTML = '<div class="cityName">\n' +
+            '                <h3 class="name">' + res.name + '</h3>\n' +
+            '                <div class="temperature"><span>' + Math.trunc(res.main.temp) + '°C</span></div>\n' +
+            '                <img class="animeWeather" src="' + weatherImg + '" alt="weatherIcon">\n' +
             '                <button class="krest">\n' +
             '                    <img class="krestStyles" onclick="clearFavourite(this);" src="img/animeKrest-removebg-preview.png" alt="krest">\n' +
             '                </button>\n' +
@@ -33,31 +51,39 @@ forEachFavourite((newCityName) => {
             '                    </li>\n' +
             '                    <li class="humidity">\n' +
             '                        <div class=infoName>Влажность</div>\n' +
-            '                        <div class="info"><span>'+ res.main.humidity +'%</span></div>\n' +
+            '                        <div class="info"><span>' + res.main.humidity + '%</span></div>\n' +
             '                    </li>\n' +
             '                    <li class="coordinates">\n' +
             '                        <div class=infoName>Координаты</div>\n' +
-            '                        <div class="info">[<span>'+ res.coord.lat +'</span>,<span>'+ res.coord.lon +'</span>]</div>\n' +
+            '                        <div class="info">[<span>' + res.coord.lat + '</span>,<span>' + res.coord.lon + '</span>]</div>\n' +
             '                    </li>\n' +
             '                </ul>\n' +
             '            </div>';
 
-        document.getElementById("FavouritesCities").appendChild(FavouritesCity);});
+        document.getElementById("FavouritesCities").appendChild(FavouritesCity);
+    });
 
 });
 
 
 addButton.onclick = function () {
-    let newCityName=document.getElementById("newCityName").value;
+    let newCityName = document.getElementById("newCityName").value;
     addFavourite(newCityName);
-    getFastWeather(newCityName, (res) => {newCityData=JSON.stringify(res);
-        let FavouritesCity=document.createElement("li")
-        FavouritesCity.setAttribute("name",res.name);
-        FavouritesCity.classList.add("cityBlock" ,"mb25");
-        FavouritesCity.innerHTML='<div class="cityName">\n' +
-            '                <h3 class="name">'+ res.name +'</h3>\n' +
-            '                <div class="temperature"><span>'+ Math.trunc(res.main.temp) +'°C</span></div>\n' +
-            '                <img class="animeWeather" src="img/animeWeather.jpeg" alt="weatherIcon">\n' +
+    getFastWeather(newCityName, (res) => {
+        newCityData = JSON.stringify(res);
+        let FavouritesCity = document.createElement("li");
+        let weatherImg;
+        if (res.weather[1].main === "Rain" || res.weather[0].main === "Snow") {
+            weatherImg = "../img/sk2NgSo19ek.jpg";
+        } else {
+            weatherImg = "../img/M2tjhQmJe0o.jpg";
+        }
+        FavouritesCity.setAttribute("name", res.name);
+        FavouritesCity.classList.add("cityBlock", "mb25");
+        FavouritesCity.innerHTML = '<div class="cityName">\n' +
+            '                <h3 class="name">' + res.name + '</h3>\n' +
+            '                <div class="temperature"><span>' + Math.trunc(res.main.temp) + '°C</span></div>\n' +
+            '                <img class="animeWeather" src="' + weatherImg + '" alt="weatherIcon">\n' +
             '                <button class="krest">\n' +
             '                    <img class="krestStyles" onclick="clearFavourite(this);" src="img/animeKrest-removebg-preview.png" alt="krest">\n' +
             '                </button>\n' +
@@ -78,18 +104,17 @@ addButton.onclick = function () {
             '                    </li>\n' +
             '                    <li class="humidity">\n' +
             '                        <div class=infoName>Влажность</div>\n' +
-            '                        <div class="info"><span>'+ res.main.humidity +'%</span></div>\n' +
+            '                        <div class="info"><span>' + res.main.humidity + '%</span></div>\n' +
             '                    </li>\n' +
             '                    <li class="coordinates">\n' +
             '                        <div class=infoName>Координаты</div>\n' +
-            '                        <div class="info">[<span>'+ res.coord.lat +'</span>,<span>'+ res.coord.lon +'</span>]</div>\n' +
+            '                        <div class="info">[<span>' + res.coord.lat + '</span>,<span>' + res.coord.lon + '</span>]</div>\n' +
             '                    </li>\n' +
             '                </ul>\n' +
             '            </div>';
 
-        document.getElementById("FavouritesCities").appendChild(FavouritesCity);});
-
-
+        document.getElementById("FavouritesCities").appendChild(FavouritesCity);
+    });
 
 
 }
