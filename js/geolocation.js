@@ -23,13 +23,14 @@ function alertLocation() {
             var humidity = Answer.main.humidity;
             var wind = Answer.wind.speed;
             var clouds = Answer.clouds.all;
+            document.getElementById("КирюшаЕбанноеХуилоБезМатериОтцаИСынаИСвятогоДуха").innerText = Answer.name;
             document.getElementById("wind-speed").innerText = wind;
             document.getElementById("pressure").innerText = pressure;
             document.getElementById("humidity").innerText = humidity;
             document.getElementById("clouds").innerText = clouds;
-            document.getElementById("latitude").innerText = position.coords.latitude;
-            document.getElementById("longitude").innerText = position.coords.longitude;
-            document.getElementById("temp").innerText = Math.trunc(temp);
+            document.getElementById("latitude").innerText = Answer.coord.lat;
+            document.getElementById("longitude").innerText = Answer.coord.lon;
+            document.getElementById("temp").innerText = temp;
         })
         // alert("position is " + position.coords.latitude + " " + position.coords.longitude);
     }, (e) => {
@@ -40,13 +41,14 @@ function alertLocation() {
             var humidity = Answer.main.humidity;
             var wind = Answer.wind.speed;
             var clouds = Answer.clouds.all;
+            document.getElementById("КирюшаЕбанноеХуилоБезМатериОтцаИСынаИСвятогоДуха").innerText = Answer.name;
             document.getElementById("wind-speed").innerText = wind;
             document.getElementById("pressure").innerText = pressure;
             document.getElementById("humidity").innerText = humidity;
             document.getElementById("clouds").innerText = clouds;
-            document.getElementById("latitude").innerText = position.coords.latitude;
-            document.getElementById("longitude").innerText = position.coords.longitude;
-            document.getElementById("temp").innerText = Math.trunc(temp);
+            document.getElementById("latitude").innerText = Answer.coord.lat;
+            document.getElementById("longitude").innerText = Answer.coord.lon;
+            document.getElementById("temp").innerText = temp;
         })
     })
 }

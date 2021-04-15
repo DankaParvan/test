@@ -95,7 +95,6 @@ addButton.onclick = function () {
 }
 
 function clearFavourite(e) {
-    alert(e.parentNode.parentNode.parentNode.getAttribute("name"));
     removeFavourite(e.parentNode.parentNode.parentNode.getAttribute("name").toLowerCase());
     e.parentNode.parentNode.parentNode.remove();
 }
