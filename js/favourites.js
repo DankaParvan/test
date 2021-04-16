@@ -73,7 +73,17 @@ addButton.onclick = function () {
         newCityData = JSON.stringify(res);
         let FavouritesCity = document.createElement("li");
         let weatherImg;
-        if (res.weather[1].main === "Rain" || res.weather[0].main === "Snow") {
+        var isRainy = false;
+
+        for (var x in res.weather) {
+            if ((x.main === "Rain") || (x.main === "Snow")) {
+                isRainy = true;
+                break;
+            }
+        }
+
+
+        if (isRainy) {
             weatherImg = "../img/sk2NgSo19ek.jpg";
         } else {
             weatherImg = "../img/M2tjhQmJe0o.jpg";
