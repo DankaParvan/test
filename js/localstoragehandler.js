@@ -24,5 +24,5 @@ function removeFavourite(value) {
         array.splice(index, 1);
     }
     localStorage.setItem("Favourites", JSON.stringify(array));
-    alert("update ls " + JSON.stringify(array));
+
 }

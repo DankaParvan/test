@@ -15,7 +15,17 @@ function getLocation(onAnswer) {
 }
 
 function alertLocation() {
+    document.getElementById("city-name").innerText = 'Данные загружаются';
+    document.getElementById("wind-speed").innerText ='Данные загружаются';
+    document.getElementById("pressure").innerText = 'Данные загружаются';
+    document.getElementById("humidity").innerText = 'Данные загружаются';
+    document.getElementById("clouds").innerText = 'Данные загружаются';
+    document.getElementById("latitude").innerText = 'Данные загружаются';
+    document.getElementById("longitude").innerText = 'Данные загружаются';
+    document.getElementById("temp").innerText = '';
+    document.getElementById("weather").style.display="none";
     requestGeolocation((position) => {
+
         requestWeather(position.coords.latitude, position.coords.longitude, (Answer) => {
             console.log(JSON.stringify(Answer));
             var temp = Answer.main.temp;
@@ -38,6 +48,7 @@ function alertLocation() {
             } else {
                 weatherImg.setAttribute("src", "../img/M2tjhQmJe0o.jpg");
             }
+            document.getElementById("weather").style.display="block";
             document.getElementById("city-name").innerText = Answer.name;
             document.getElementById("wind-speed").innerText = wind;
             document.getElementById("pressure").innerText = pressure;
@@ -47,7 +58,6 @@ function alertLocation() {
             document.getElementById("longitude").innerText = Answer.coord.lon;
             document.getElementById("temp").innerText = temp;
         })
-        // alert("position is " + position.coords.latitude + " " + position.coords.longitude);
     }, (e) => {
         getFastWeather("Москва", (Answer) => {
             console.log(JSON.stringify(Answer));
